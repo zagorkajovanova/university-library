@@ -1,28 +1,29 @@
 <header xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light bg-light shadow">
         <div class="container">
-            <a class="navbar-brand" href="/">Универзитетска библиотека</a>
+            <a class="navbar-brand" href="/" style="font-weight: bold">
+                <i class="bi bi-book-half"></i> Универзитетска библиотека
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
                     aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+            <div class="collapse navbar-collapse justify-content-" id="navbarsExampleDefault">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item m-auto">
                         <a class="nav-link active" href="/books">Книги</a>
                     </li>
-                    <li class="nav-item m-auto" sec:authorize="hasRole('ROLE_ADMIN')">
+                    <li class="nav-item m-auto">
                         <a class="nav-link active" href="/genres">Жанрови</a>
                     </li>
-                    <li class="nav-item m-auto" sec:authorize="hasRole('ROLE_ADMIN')">
+                    <li class="nav-item m-auto">
                         <a class="nav-link active" href="/authors">Автори</a>
                     </li>
                     <li class="nav-item m-auto" sec:authorize="hasRole('ROLE_ADMIN')">
                         <a class="nav-link active" href="/publishHouses">Издавачки куќи</a>
                     </li>
                 </ul>
-
 
                 <form class="form-inline my-2 my-lg-0">
                     <div class="input-group input-group-sm">
@@ -31,33 +32,33 @@
                                placeholder="Search...">
                         <div class="input-group-append">
                             <button type="button" class="btn btn-secondary btn-number">
-                                <i class="fa fa-search"></i>
+                                <i class="bi bi-search"></i>
                             </button>
                         </div>
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li class="nav-item" sec:authorize="isAuthenticated()">
-                        <a class="nav-link" href="#">
+                    <li class="nav-item pl-3" sec:authorize="isAuthenticated()">
+                        <a class="navbar-text" href="#">
                             <th:block th:if="${#request.getRemoteUser() != null}"
                                       th:text="${#request.getRemoteUser()}"></th:block>
                         </a>
                     </li>
                     <li class="nav-item" sec:authorize="isAuthenticated()">
-                        <a class="btn btn-success btn-sm ml-3" href="/cart">
-                            <i class="fa fa-shopping-cart"></i> Cart
+                        <a class="btn btn-success btn-sm ml-3 mt-2" href="/cart">
+                            <i class="bi bi-bag"></i> Кошничка
                         </a>
                     </li>
 
                     <li class="nav-item" sec:authorize="isAuthenticated()">
-                        <a class="btn btn-light btn-sm ml-3" href="/logout">
-                            <i class="fa fa-shopping-cart"></i> Logout
+                        <a class="btn btn-outline-warning btn-sm ml-3  mt-2" href="/logout">
+                            Одјава
                         </a>
                     </li>
                     <li class="nav-item" sec:authorize="!isAuthenticated()">
-                        <a class="btn btn-light btn-sm ml-3" href="/login">
-                            <i class="fa fa-shopping-cart"></i> Login
+                        <a class="btn btn-outline-primary btn-sm ml-3" href="/login">
+                            Најава
                         </a>
                     </li>
                 </ul>

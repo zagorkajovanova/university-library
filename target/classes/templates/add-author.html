@@ -1,7 +1,7 @@
 <div xmlns:th="http://www.thymeleaf.org">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">E-Library</h1>
+            <h1 class="jumbotron-heading">Внесете автор</h1>
         </div>
     </section>
 
@@ -11,36 +11,36 @@
                 <form action="/authors/add" method="POST">
                     <input id="id" type="hidden" name="id" th:value="(${author} != null ? ${author.getId()} : '')">
                     <div class="form-group">
-                        <label for="name">Author name</label>
+                        <label for="name">Име</label>
                         <input type="text"
                                class="form-control"
                                id="name"
                                name="name"
                                th:value="(${author} != null ? ${author.getName()} : '')"
                                required
-                               placeholder="Enter author name">
+                               placeholder="Внесете име на автор">
                     </div>
                     <div class="form-group">
-                        <label for="surname">Author surname</label>
+                        <label for="surname">Презиме</label>
                         <input type="text"
                                class="form-control"
                                id="surname"
                                name="surname"
                                th:value="(${author} != null ? ${author.getSurname()} : '')"
-                               placeholder="Enter author surname">
+                               placeholder="Внесете презиме на автор">
                     </div>
                     <div class="form-group">
-                        <label for="nationality">Author nationality</label>
+                        <label for="nationality">Националност</label>
                         <input type="text"
                                class="form-control"
                                id="nationality"
                                name="nationality"
                                th:value="(${author} != null ? ${author.getNationality()} : '')"
-                               placeholder="Enter author description">
+                               placeholder="Внесете нациналност на автор">
                     </div>
 
-                    <button id="submit" href="/authors/add" type="submit" class="btn btn-primary">Submit</button>
-                    <a type="button" class="btn btn-primary" href="/authors">Back</a>
+                    <button id="submit" href="/authors/add" type="submit" class="btn btn-primary">Потврди</button>
+                    <a type="button" class="btn btn-primary" href="/authors">Откажи</a>
                 </form>
             </div>
         </div>

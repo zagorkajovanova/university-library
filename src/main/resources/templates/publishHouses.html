@@ -1,8 +1,7 @@
 <div xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">E-Library SHOP</h1>
-            <h3 class="jumbotron-heading">All Publish Houses</h3>
+            <h1 class="jumbotron-heading">Издавачки куќи</h1>
         </div>
     </section>
 
@@ -13,9 +12,9 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">Publish House name</th>
-                            <th scope="col">Publish House address</th>
-                            <th scope="col">Publish House country</th>
+                            <th scope="col">Име на издавачка куќа</th>
+                            <th scope="col">Адреса</th>
+                            <th scope="col">Држава</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,14 +29,14 @@
                                           th:method="DELETE">
                                         <button type="submit" value="Delete"
                                                 class="btn btn-sm btn-danger delete-publishHouse">
-                                            <!--<i class="fa fa-trash">Delete</i>-->
+                                            <i class="bi bi-trash"></i> Избриши
                                         </button>
                                     </form>
                                 </th:block>
                                 <th:block sec:authorize="hasRole('ROLE_ADMIN')">
                                     <a th:href="@{'/publishHouses/edit-form/{id}' (id=${publishHouse.getId()})}"
-                                       class="btn btn-sm btn-info edit-publishHouse">
-                                        <i class="fa fa-trash">Edit</i>
+                                       class="btn btn-sm btn-info edit-publishHouse mt-2">
+                                        <i class="bi bi-pencil"></i> Измени
                                     </a>
                                 </th:block>
                             </td>
@@ -50,7 +49,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12" sec:authorize="hasRole('ROLE_ADMIN')">
                         <a href="/publishHouses/add-form" class="btn btn-block btn-dark add-publishHouse-btn">
-                            Add new publish house
+                            <i class="bi bi-plus-circle-dotted"></i> Додади издавачка куќа
                         </a>
                     </div>
                 </div>

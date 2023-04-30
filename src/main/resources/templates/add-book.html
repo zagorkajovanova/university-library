@@ -1,7 +1,7 @@
 <div xmlns:th="http://www.thymeleaf.org">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">E-Library</h1>
+            <h1 class="jumbotron-heading">Додади книга</h1>
         </div>
     </section>
 
@@ -11,35 +11,35 @@
                 <form action="/books/add" method="POST">
                     <input id="id" type="hidden" name="id" th:value="(${book} != null ? ${book.getId()} : '')">
                     <div class="form-group">
-                        <label for="name">Book name</label>
+                        <label for="name">Име</label>
                         <input type="text"
                                class="form-control"
                                id="name"
                                name="name"
                                th:value="(${book} != null ? ${book.getName()} : '')"
                                required
-                               placeholder="Enter book name">
+                               placeholder="Внесете име на книга">
                     </div>
                     <div class="form-group">
-                        <label for="price">Price</label>
+                        <label for="price">Цена</label>
                         <input type="text"
                                class="form-control"
                                id="price"
                                name="price"
                                th:value="(${book} != null ? ${book.getPrice()} : '')"
-                               placeholder="Enter price">
+                               placeholder="Внесете цена на книга">
                     </div>
                     <div class="form-group">
-                        <label for="description">Description</label>
+                        <label for="description">Опис</label>
                         <input type="text"
                                class="form-control"
                                id="description"
                                name="description"
                                th:value="(${book} != null ? ${book.getDescription()} : '')"
-                               placeholder="Enter book description">
+                               placeholder="Внесете опис на книга">
                     </div>
                     <div class="form-group">
-                        <label>Genre</label>
+                        <label>Жанр</label>
                         <select name="genre" class="form-control">
                             <option th:if="${book} != null"
                                     th:selected="${book.getGenre() != null &&
@@ -56,7 +56,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Author</label>
+                        <label>Автор</label>
                         <select name="author" class="form-control">
                             <option th:if="${book} != null"
                                     th:selected="${book.getAuthor() != null && book.getAuthor().getId() == a.getId()}"
@@ -72,7 +72,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Publish House</label>
+                        <label>Издавачка куќа</label>
                         <select name="publishHouse" class="form-control">
                             <option th:if="${book} != null"
                                     th:selected="${book.getPublishHouse() != null && book.getPublishHouse().getId() == a.getId()}"
@@ -87,8 +87,8 @@
                             </option>
                         </select>
                     </div>
-                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-                    <a type="button" class="btn btn-primary" href="/Books">Back</a>
+                    <button id="submit" type="submit" class="btn btn-primary">Потврди</button>
+                    <a type="button" class="btn btn-primary" href="/books">Откажи</a>
                 </form>
             </div>
         </div>
