@@ -1,7 +1,7 @@
 <div xmlns:th="http://www.thymeleaf.org">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">E-Library</h1>
+            <h1 class="jumbotron-heading">Додади издавачка куќа</h1>
         </div>
     </section>
 
@@ -11,36 +11,36 @@
                 <form action="/publishHouses/add" method="POST">
                     <input id="id" type="hidden" name="id" th:value="(${publishHouse} != null ? ${publishHouse.getId()} : '')">
                     <div class="form-group">
-                        <label for="name">Publish House name</label>
+                        <label for="name">Име</label>
                         <input type="text"
                                class="form-control"
                                id="name"
                                name="name"
                                th:value="(${publishHouse} != null ? ${publishHouse.getName()} : '')"
                                required
-                               placeholder="Enter Publish House name">
+                               placeholder="Внесете име на издавачка куќа">
                     </div>
                     <div class="form-group">
-                        <label for="address">Publish House address</label>
+                        <label for="address">Адреса</label>
                         <input type="text"
                                class="form-control"
                                id="address"
                                name="address"
                                th:value="(${publishHouse} != null ? ${publishHouse.getAddress()} : '')"
-                               placeholder="Enter Publish House address">
+                               placeholder="Внесете адреса на издавачка куќа">
                     </div>
                     <div class="form-group">
-                        <label for="country">Publish House country</label>
+                        <label for="country">Држава</label>
                         <input type="text"
                                class="form-control"
                                id="country"
                                name="country"
                                th:value="(${publishHouse} != null ? ${publishHouse.getCountry()} : '')"
-                               placeholder="Enter Publish House country origin">
+                               placeholder="Внесете држава">
                     </div>
 
-                    <button id="submit" href="/publishHouses/add" type="submit" class="btn btn-primary">Submit</button>
-                    <a type="button" class="btn btn-primary" href="/publishHouses">Back</a>
+                    <button id="submit" href="/publishHouses/add" type="submit" class="btn btn-primary">Потврди</button>
+                    <a type="button" class="btn btn-primary" href="/publishHouses">Откажи</a>
                 </form>
             </div>
         </div>

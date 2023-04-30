@@ -1,7 +1,7 @@
 <div xmlns:th="http://www.thymeleaf.org">
     <section class="jumbotron text-center">
         <div class="container">
-            <h1 class="jumbotron-heading">E-Library</h1>
+            <h1 class="jumbotron-heading">Додади жанр</h1>
         </div>
     </section>
 
@@ -11,27 +11,27 @@
                 <form action="/genres/add" method="POST">
                     <input id="id" type="hidden" name="id" th:value="(${genre} != null ? ${genre.getId()} : '')">
                     <div class="form-group">
-                        <label for="name">Genre name</label>
+                        <label for="name">Име на жанр</label>
                         <input type="text"
                                class="form-control"
                                id="name"
                                name="name"
                                th:value="(${genre} != null ? ${genre.getName()} : '')"
                                required
-                               placeholder="Enter genre name">
+                               placeholder="Внесете име на жанр">
                     </div>
                     <div class="form-group">
-                        <label for="description">Genre description</label>
+                        <label for="description">Опис на жанр</label>
                         <input type="text"
                                class="form-control"
                                id="description"
                                name="description"
                                th:value="(${genre} != null ? ${genre.getDescription()} : '')"
-                               placeholder="Enter genre description">
+                               placeholder="Внесете опис на жанр">
                     </div>
 
-                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
-                    <a type="button" class="btn btn-primary" href="/genres">Back</a>
+                    <button id="submit" type="submit" class="btn btn-primary">Потврди</button>
+                    <a type="button" class="btn btn-primary" href="/genres">Откажи</a>
                 </form>
             </div>
         </div>
