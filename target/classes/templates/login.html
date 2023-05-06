@@ -1,5 +1,5 @@
-<div class="container" xmlns:th="http://www.thymeleaf.org">
-  <form class="form-signin mt-xl-5" method="post" action="/login">
+<div class="container d-flex justify-content-center" xmlns:th="http://www.thymeleaf.org">
+  <form class="form-signin mt-xl-5 text-center w-50" method="post" action="/login">
     <h2 class="form-signin-heading">Најава</h2>
     <p>
       <label for="username" class="sr-only">Корисничко име</label>
@@ -14,7 +14,9 @@
 
     <div th:text="${param.error}" class="text-danger"></div>
 
-    <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Најава</button>
+    <button id="submit" class="btn btn-block btn-lg btn-primary" type="submit">Најава</button>
+    <a href="/register" class="btn btn-block btn-light mt-1">Немате профил? Регистрирајте се!</a>
+<!--    <a href="/register" class="btn btn-outline-secondary btn-lg btn-light" >Регистрирај се</a>-->
   </form>
-  <a href="/register" class="btn btn-block btn-light">Регистрирај се</a>
+
 </div>

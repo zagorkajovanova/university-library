@@ -15,6 +15,7 @@ public interface CartService {
     List<Book> listAll();
     Cart getActiveCart(String username);
     Cart addBookToCart(String username, Long bookId);
+    Cart removeBookFromCart(String username, Long bookId);
     void deleteById(Long id);
     void writeTableHeader(PdfPTable table);
 

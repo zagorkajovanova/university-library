@@ -5,8 +5,8 @@
         </div>
     </section>
 
-    <div class="container">
-        <div class="row">
+    <div class="container d-flex justify-content-center">
+        <div class="row w-100 justify-content-center">
             <div class="col-md-5">
                 <form action="/genres/add" method="POST">
                     <input id="id" type="hidden" name="id" th:value="(${genre} != null ? ${genre.getId()} : '')">
@@ -30,8 +30,8 @@
                                placeholder="Внесете опис на жанр">
                     </div>
 
-                    <button id="submit" type="submit" class="btn btn-primary">Потврди</button>
                     <a type="button" class="btn btn-primary" href="/genres">Откажи</a>
+                    <button id="submit" type="submit" class="btn btn-primary">Потврди</button>
                 </form>
             </div>
         </div>
