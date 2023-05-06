@@ -4,6 +4,10 @@
             <h3 class="jumbotron-heading">Кошничка на
                 <th:block th:if="${#request.getRemoteUser() != null}" th:text="${#request.getRemoteUser()}"></th:block>
             </h3>
+            <h5 class="jumbotron-heading mt-2"
+                th:if="${books.size() == 0}"
+            >Вашата кошничка е празна!
+            </h5>
         </div>
     </section>
 
@@ -47,7 +51,7 @@
                 </div>
             </div>
             <div class="col mb-3">
-                <div class="row">
+                <div class="row" th:if="${books.size() != 0}">
                     <div class="col-sm-12 col-md-12 d-flex justify-content-center">
                         <a href="/successful-reservation" class="btn btn-success add-publishHouse-btn">
                             <i class="bi bi-check-circle"></i> Потврди резервација

@@ -5,8 +5,8 @@
         </div>
     </section>
 
-    <div class="container">
-        <div class="row">
+    <div class="container d-flex justify-content-center">
+        <div class="row w-100 justify-content-center">
             <div class="col-md-5">
                 <form action="/books/add" method="POST">
                     <input id="id" type="hidden" name="id" th:value="(${book} != null ? ${book.getId()} : '')">
@@ -87,8 +87,8 @@
                             </option>
                         </select>
                     </div>
-                    <button id="submit" type="submit" class="btn btn-primary">Потврди</button>
                     <a type="button" class="btn btn-primary" href="/books">Откажи</a>
+                    <button id="submit" type="submit" class="btn btn-primary">Потврди</button>
                 </form>
             </div>
         </div>

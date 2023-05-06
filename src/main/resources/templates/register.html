@@ -1,8 +1,8 @@
 <div class="container">
   <h1 th:if="${hasError}" th:text="${error}"></h1>
 </div>
-<div class="container">
-  <form class="form-signin mt-xl-5" method="post" action="/register">
+<div class="container d-flex justify-content-center">
+  <form class="form-signin mt-xl-5 w-50 text-center" method="post" action="/register">
     <h2 class="form-signin-heading">Регистрација</h2>
     <p>
       <label for="username" class="sr-only">Username</label>
@@ -43,6 +43,7 @@
     </div>
     </p>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Регистрација</button>
+    <a href="/login" class="btn btn-block btn-light mt-1">Веќе имате креирано профил? Најавете се!</a>
   </form>
-  <a href="/login" class="btn btn-block btn-light">Веќе имате креирано профил? Најавете се!</a>
+
 </div>

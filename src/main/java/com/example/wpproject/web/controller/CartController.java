@@ -53,9 +53,15 @@ public class CartController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public String deleteProduct(@PathVariable Long id) {
-        this.cartService.deleteById(id);
-        return "redirect:/cart";
+    public String deleteProduct(@PathVariable Long id, Authentication authentication) {
+//        this.cartService.deleteById(id);
+        try {
+            User user = (User) authentication.getPrincipal();
+            this.cartService.removeBookFromCart(user.getUsername(), id);
+            return "redirect:/cart";
+        } catch (RuntimeException exception) {
+            return "redirect:/cart?error=" + exception.getMessage();
+        }
     }
     @GetMapping("/export/pdf")
     public void exportToPDF(HttpServletResponse response) throws DocumentException, IOException {
