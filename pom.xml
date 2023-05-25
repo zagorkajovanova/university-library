@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>wpproject</artifactId>
+    <artifactId>university-library</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>wpproject</name>
-    <description>wpproject</description>
+    <name>university-library</name>
+    <description>university-library</description>
     <properties>
         <java.version>11</java.version>
     </properties>

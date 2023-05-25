@@ -20,6 +20,5 @@ public interface BookService {
     void export(HttpServletResponse response, Long id) throws DocumentException, IOException;
 
     void writeTableHeader(PdfPTable table);
-
-    //void writeTableData(PdfPTable table, @PathVariable Long id);
+    List<Book> findBooksByName(String bookName) throws Exception;
 }

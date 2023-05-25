@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/wpproject.iml" filepath="$PROJECT_DIR$/wpproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/university-library.iml" filepath="$PROJECT_DIR$/university-library.iml" />
     </modules>
   </component>
 </project>

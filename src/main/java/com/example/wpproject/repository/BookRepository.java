@@ -14,4 +14,5 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     //void deleteByName(String name);
     List<Book> findByAuthor(Author author);
     Optional<Book> findById(Long id);
+    List<Book> findBooksByNameContainingIgnoreCase(String name);
 }
