@@ -25,14 +25,17 @@
                     </li>
                 </ul>
 
-                <form class="form-inline my-2 my-lg-0">
+                <form method="post" action="/books/search"
+                        class="form-inline my-2 my-lg-0" >
                     <div class="input-group input-group-sm">
                         <input type="text" class="form-control" aria-label="Small"
                                aria-describedby="inputGroup-sizing-sm"
-                               placeholder="Search...">
+                               placeholder="Search..."
+                               name="bookName"
+                        >
                         <div class="input-group-append">
-                            <button type="button" class="btn btn-secondary btn-number">
-                                <i class="bi bi-search"></i>
+                            <button type="submit" class="btn btn-outline-primary">
+                                <i class="bi bi-search ml-2"></i>
                             </button>
                         </div>
                     </div>

@@ -155,4 +155,12 @@ public class BookServiceImpl implements BookService {
 
     }
 
+    @Override
+    public List<Book> findBooksByName(String bookName) throws Exception {
+        if (bookRepository.findBooksByNameContainingIgnoreCase(bookName).isEmpty()){
+            throw new Exception("There are no books with such name");
+        }
+        return bookRepository.findBooksByNameContainingIgnoreCase(bookName);
+    }
+
 }

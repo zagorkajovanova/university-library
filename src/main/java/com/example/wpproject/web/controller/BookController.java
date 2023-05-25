@@ -37,22 +37,24 @@ public class BookController {
 
     @GetMapping
     public String getBookPage(@RequestParam(required = false) String error,
-                              Model model) {
+                              @RequestParam(required = false) String bookName,
+                              Model model) throws Exception {
+        List<Book> books = this.bookService.findAll();
+
         if (error != null && !error.isEmpty()) {
             model.addAttribute("hasError", true);
             model.addAttribute("error", error);
         }
-        List<Book> books = this.bookService.findAll();
 
-        /*
-        if(name==null || name.isEmpty()){
-             books = this.bookService.findAll();
-        }
-        else {
-            books = this.bookService.filter(name);
-        }
+        model.addAttribute("books", books);
+        model.addAttribute("bodyContent", "books");
+        return "master-template";
+    }
 
-         */
+    @PostMapping("/search")
+    public String searchBooks(@RequestParam String bookName, Model model) throws Exception{
+        List<Book> books = this.bookService.findBooksByName(bookName);
+
         model.addAttribute("books", books);
         model.addAttribute("bodyContent", "books");
         return "master-template";
